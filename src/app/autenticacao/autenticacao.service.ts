@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -16,7 +17,7 @@ export class AutenticacaoService {
   autenticar(usuario: string, senha: string): Observable<HttpResponse<any>> {
     return this.httpClient
       .post(
-        'http://localhost:44328/login',
+        environment.ApiUrl + '/login',
         {
           userName: usuario,
           password: senha,
