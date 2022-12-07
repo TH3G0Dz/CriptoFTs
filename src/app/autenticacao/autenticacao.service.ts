@@ -14,21 +14,13 @@ export class AutenticacaoService {
     private usuarioService: UsuarioService
   ) {}
 
-  autenticar(usuario: string, senha: string): Observable<HttpResponse<any>> {
+  autenticar(usuario: string, senha: string) {
     return this.httpClient
       .post(
-        environment.ApiUrl + '/login',
+        `${environment.ApiUrl}/login`,
         {
           userName: usuario,
           password: senha,
-        },
-        { observe: 'response' }
+        }
       )
-      .pipe(
-        tap((res) => {
-          const authToken = res.headers.get('x-access-token') ?? '';
-          this.usuarioService.salvaToken(authToken);
-        })
-      );
-  }
-}
+}}

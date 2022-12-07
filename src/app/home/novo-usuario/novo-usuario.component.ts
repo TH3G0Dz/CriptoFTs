@@ -18,7 +18,7 @@ export class NovoUsuarioComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private novoUsuarioService: NovoUsuarioService,
-    private usuarioExistenteServive: UsuarioExisteService,
+    private usuarioExistenteService: UsuarioExisteService,
     private router: Router
   ) {}
 
@@ -28,7 +28,7 @@ export class NovoUsuarioComponent implements OnInit {
         userName: [
           '',
           [minusculoValidator],
-          [this.usuarioExistenteServive.usuarioJaExite()],
+          [this.usuarioExistenteService.usuarioJaExite()],
         ],
         email: ['', [Validators.required, Validators.email]],
         password: [''],
@@ -41,11 +41,12 @@ export class NovoUsuarioComponent implements OnInit {
   }
 
   cadastrar() {
+    console.log(this.novoUsuarioForm.valid)
     if (this.novoUsuarioForm.valid) {
       const novoUsuario = this.novoUsuarioForm.getRawValue() as NovoUsuario;
       this.novoUsuarioService.cadastraNovoUsuario(novoUsuario).subscribe(
         () => {
-          this.router.navigate(['']);
+          this.router.navigate(['home/ativeemail']);
         },
         (error) => {
           console.log(error);
