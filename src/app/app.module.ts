@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 import { RodapeModule } from './componentes/rodape/rodape.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { RodapeModule } from './componentes/rodape/rodape.module';
     HttpClientModule,
     CabecalhoModule,
     RodapeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
