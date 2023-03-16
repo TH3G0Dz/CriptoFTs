@@ -1,11 +1,12 @@
+import { first } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { minusculoValidator } from './minusculo.validator';
 import { NovoUsuario } from './novo-usuario';
 import { NovoUsuarioService } from './novo-usuario.service';
 import { UsuarioExisteService } from './usuario-existe.service';
-import { usuarioSenhaIguaisValidator } from './usuario-senha-iguais.validator';
+import { EqualsPasswordValidator, usuarioSenhaIguaisValidator, validarCaracterEspecial, validarLetraMaiuscula, validarNumero } from './senha-validator';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -26,13 +27,13 @@ export class NovoUsuarioComponent implements OnInit {
     this.novoUsuarioForm = this.formBuilder.group(
       {
         userName: [
-          '',
-          [minusculoValidator],
-          [this.usuarioExistenteService.usuarioJaExite()],
+          '',          [minusculoValidator,Validators.required,
+          this.usuarioExistenteService.usuarioJaExite()],
         ],
         email: ['', [Validators.required, Validators.email]],
-        password: [''],
-        repassword: ['']
+        password: ['',[Validators.required,Validators.minLength(6),Validators.maxLength(20),
+        ,validarCaracterEspecial.bind(this),validarLetraMaiuscula.bind(this),validarNumero.bind(this)]],
+        repassword: ['',[Validators.required, EqualsPasswordValidator.bind(this)]]
       },
       {
         validators: [usuarioSenhaIguaisValidator],
@@ -48,8 +49,18 @@ export class NovoUsuarioComponent implements OnInit {
         () => {
           this.router.navigate(['home/ativeemail']);
         },
-        (error) => {
-          console.log(error);
+        (e) => {
+
+          var erros = e.error.reasons
+
+          switch(erros[0].message){
+            case "Failed : DuplicateUserName":
+                alert("Usúario já cadastrado");
+              break;
+              default:
+                alert(erros[0].message);
+              break;
+          }
         }
       );
     }

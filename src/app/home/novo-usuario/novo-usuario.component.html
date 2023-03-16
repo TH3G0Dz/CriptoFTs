@@ -9,6 +9,14 @@
     />
     <app-mensagem
       *ngIf="
+        novoUsuarioForm.get('userName')?.errors?.required &&
+        novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Usuário é obrigatório"
+    >
+    </app-mensagem>
+    <app-mensagem
+      *ngIf="
         novoUsuarioForm.get('userName')?.errors?.minusculo &&
         novoUsuarioForm.get('userName')?.touched
       "
@@ -21,7 +29,7 @@
     ></app-mensagem>
   </div>
   <div class="form-group">
-    <input placeholder="e-mail" class="form-control" formControlName="email" />
+    <input placeholder="E-mail" class="form-control" formControlName="email" />
     <app-mensagem
       *ngIf="
         novoUsuarioForm.get('email')?.errors?.required &&
@@ -35,7 +43,7 @@
         novoUsuarioForm.get('email')?.errors?.email &&
         novoUsuarioForm.get('email')?.touched
       "
-      mensagem="E-mail no formato incorreto"
+      mensagem="E-mail incorreto."
     >
     </app-mensagem>
   </div>
@@ -47,27 +55,39 @@
       class="form-control"
       formControlName="password"
     />
-    <app-mensagem
-      *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
-      mensagem="Senha deve ser diferente do usuário"
-    >
-    </app-mensagem>
+    <div *ngIf="novoUsuarioForm.get('password')?.invalid && novoUsuarioForm.get('password')?.touched">
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.errors?.required"
+        mensagem="Senha é obrigatória."></app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.errors?.minlength"
+        mensagem="Senha deve ter no mínimo 6 caracteres."></app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.errors?.maxlength"
+        mensagem="Senha deve ter no máximo 20 caracteres."></app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario" mensagem="Senha deve ser diferente do usuário.">
+      </app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.hasError('semCaracterEspecial')"
+        mensagem="A senha deve conter pelo menos um caracter especial.">
+      </app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.hasError('semLetraMaiuscula')"
+        mensagem="A senha deve conter pelo menos uma letra maiúscula.">
+      </app-mensagem>
+      <app-mensagem *ngIf="novoUsuarioForm.get('password')?.hasError('semNumero')"
+        mensagem="A senha deve conter pelo menos um número.                              ">
+      </app-mensagem>
+      </div>
   </div>
   <div class="form-group">
     <input
       type="password"
-      placeholder="Senha"
+      placeholder="Confirmar Senha"
       class="form-control"
       formControlName="repassword"
     />
-    <app-mensagem
-      *ngIf="novoUsuarioForm.errors?.Senha"
-      mensagem="Senha diferente"
-    >
+    <app-mensagem *ngIf="novoUsuarioForm.get('repassword')?.hasError('senhasDiferentes')"
+      mensagem="As senhas devem ser iguais.">
     </app-mensagem>
   </div>
 
-  <button class="btn btn-primary btn-block">Cadastro</button>
+  <button type="submit" class="btn btn-primary btn-block" [disabled]="!novoUsuarioForm.valid">Cadastrar</button>
 </form>
 
-<p>Já um usuário? <a [routerLink]="['']"> Faça Login</a></p>
+<p>Já é um usuário? <a [routerLink]="['']"> Faça Login</a></p>
