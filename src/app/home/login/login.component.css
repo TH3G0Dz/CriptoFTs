@@ -1,0 +1,20 @@
+form > *{
+  margin-top: 2rem;
+}
+
+form
+{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+button{
+  width: 30vw;
+}
+
+p {
+  width: 30vw;
+}
+

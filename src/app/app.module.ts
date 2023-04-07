@@ -6,6 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CabecalhoModule } from './componentes/cabecalho/cabecalho.module';
 import { RodapeModule } from './componentes/rodape/rodape.module';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoadModule } from './componentes/load/load.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +19,14 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     CabecalhoModule,
     RodapeModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    LoadModule,
+  ],
+  exports: [
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

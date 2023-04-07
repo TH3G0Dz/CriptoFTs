@@ -7,6 +7,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MensagemModule } from '../componentes/mensagem/mensagem.module';
 import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 import { EmailActiveMessageComponent } from './email-ativate/ative-email.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+
+
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent, NovoUsuarioComponent, EmailActiveMessageComponent],
@@ -16,7 +21,8 @@ import { EmailActiveMessageComponent } from './email-ativate/ative-email.compone
     FormsModule,
     MensagemModule,
     ReactiveFormsModule,
+    MatInputModule,MatAutocompleteModule
   ],
-  exports: [HomeComponent],
+  exports: [HomeComponent,],
 })
 export class HomeModule {}

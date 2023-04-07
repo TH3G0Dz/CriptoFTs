@@ -1,6 +1,7 @@
-<header class="sticky-top">
-  <nav class="navbar navbar-light bg-white">
-    <a class="navbar-brand">CryptoFt</a>
+<mat-toolbar color="primary">
+
+  <a class="navbar-text" [routerLink]="['principal']">Principal</a>
+  <span class="example-spacer"></span>
     <div *ngIf="user$ | async as user">
       <div *ngIf="user.name; else login">
         <i class="fa fa-user-circle mr-1"> </i>
@@ -8,11 +9,8 @@
         <a (click)="logout()">Logout</a>
       </div>
     </div>
-  </nav>
+    <ng-template #login>
+      <a class="navbar-text" [routerLink]="['login']">Login</a>
+      </ng-template>
+      </mat-toolbar>
 
-  <ng-template #login>
-    <span class="navbar-text">
-      <a [routerLink]="['']">Login</a>
-    </span>
-  </ng-template>
-</header>
