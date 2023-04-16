@@ -7,7 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [CabecalhoComponent,],
-  imports: [CommonModule, RouterModule,MatToolbarModule],
+  imports: [CommonModule, RouterModule, MatToolbarModule],
   exports: [CabecalhoComponent],
 })
 export class CabecalhoModule {}

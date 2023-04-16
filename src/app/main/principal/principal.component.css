@@ -1,24 +1,11 @@
-* {
-  box-sizing: border-box;
-}
 
 /*BACKGROUND COURTESY OF http://www.flickr.com/photos/zooboing/4594422812/ */
-.bg {
- background:
-  url('http://farm2.staticflickr.com/1182/4594422812_270b790dff_z.jpg') repeat ;
- position: fixed;
- opacity: 0.5;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
-}
+
 .container {
  position: relative;
  width: 540px;
  margin: 40px auto;
  text-align: center;
- height: 600px;
 }
 
 .planets div {

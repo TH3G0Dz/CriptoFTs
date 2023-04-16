@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
-
-  <a class="navbar-text" [routerLink]="['principal']">Principal</a>
+  <a class="navbar-text" [routerLink]="['/principal']">Principal</a>
+  <a class="navbar-text" [routerLink]="['/novidades']">Novidades</a>
   <span class="example-spacer"></span>
     <div *ngIf="user$ | async as user">
       <div *ngIf="user.name; else login">
@@ -10,7 +10,7 @@
       </div>
     </div>
     <ng-template #login>
-      <a class="navbar-text" [routerLink]="['login']">Login</a>
+      <a class="navbar-text" [routerLink]="['/home']">Home</a>
       </ng-template>
       </mat-toolbar>
 

@@ -21,4 +21,12 @@ export class MensagemService {
         panelClass: ['mat-toolbar', 'mat-warn']
       });
   }
+
+  MensagemDeSucesso(sucesso: string) {
+    this._snackBar.open(sucesso, 'Ok!', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: 'top',
+      panelClass: ['mat-toolbar', 'mat-warn']
+    });
+  }
 }

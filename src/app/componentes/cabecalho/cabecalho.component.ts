@@ -15,12 +15,9 @@ export class CabecalhoComponent {
 
   constructor(private usuarioService: UsuarioService, private router: Router) {}
 
+
   logout() {
     this.usuarioService.logout();
     this.router.navigate(['home']);
-  }
-
-  load(){
-    
   }
 }
