@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Nova Noticia</h2>
+<div mat-dialog-content>
+  <form [formGroup]="AddNoticiaForm">
+    <mat-form-field>
+      <input matInput placeholder="Titulo" formControlName="Titulo">
+      <mat-error *ngIf="AddNoticiaForm.controls['Titulo'].hasError('required')">O Titulo é obrigatório.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Conteudo" formControlName="Conteudo"></textarea>
+      <mat-error *ngIf="AddNoticiaForm.controls['Conteudo'].hasError('required')">A Conteudo é obrigatória.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="date" matInput placeholder="Data" formControlName="Data">
+      <mat-error *ngIf="AddNoticiaForm.controls['Data'].hasError('required')">A Data é obrigatória.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Autor" formControlName="Autor">
+      <mat-error *ngIf="AddNoticiaForm.controls['Autor'].hasError('required')">A Autor é obrigatória.</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-primary" (click)="AddNoticia()" [disabled]="AddNoticiaForm.invalid">Salvar</button>
+</div>

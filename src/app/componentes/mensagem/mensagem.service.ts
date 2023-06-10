@@ -18,7 +18,7 @@ export class MensagemService {
       this._snackBar.open(erro, 'Ok!', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
-        panelClass: ['mat-toolbar', 'mat-warn']
+        panelClass: ['mat-toolbar', 'green']
       });
   }
 

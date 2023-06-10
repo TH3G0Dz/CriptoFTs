@@ -1,3 +1,4 @@
+import { AssistirComponent } from './main/assistir/assistir.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,9 +11,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LoadModule } from './componentes/load/load.module';
+import { RouterModule } from '@angular/router';
+import { NovidadesComponent } from './main/novidades/novidades.component';
+import { AulasComponent } from './main/aulas/aulas.component';
+import { NoticiaComponent } from './main/noticia/noticia.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AdicionarNoticiaModalComponent } from './main/noticia/adicionar-noticia-modal/adicionar-noticia-modal.component';
+import { CommonModule } from '@angular/common';
+import {  ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,NovidadesComponent,AssistirComponent,AulasComponent,NoticiaComponent,AdicionarNoticiaModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,7 +34,7 @@ import { LoadModule } from './componentes/load/load.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSnackBarModule,
-    LoadModule,
+    LoadModule,RouterModule,MatDialogModule,ReactiveFormsModule,MatInputModule,MatAutocompleteModule
   ],
   exports: [
     MatToolbarModule

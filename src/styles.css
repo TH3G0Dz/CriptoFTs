@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.green{
+  background-color: green;
+  color: wheat;
+}
+
+.purple{
+  background-color: rgb(142, 25, 196);
+  color: wheat;
+}

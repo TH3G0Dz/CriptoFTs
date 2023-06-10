@@ -19,7 +19,7 @@ nav > ul {
   top: 0;
   left: 0;
   width: 200%;
-  animation: float 10s linear infinite;
+  animation: float 60s linear infinite;
 }
 
 nav > li {
