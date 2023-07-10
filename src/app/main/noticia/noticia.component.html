@@ -1,8 +1,11 @@
 <ul>
   <li *ngFor="let item of noticias">
     <article>
-      <a class="navbar-text" [routerLink]="['../noticia']">
-      </a> {{ item.Titulo }}
+        <div class="card">
+          <a class="navbar-text" [routerLink]="['../noticia']"> </a>
+          <h3>{{ item.titulo }}</h3>
+          <p>{{ item.conteudo}}</p>
+        </div>
     </article>
   </li>
 </ul>

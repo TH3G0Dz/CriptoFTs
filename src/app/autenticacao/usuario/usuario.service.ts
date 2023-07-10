@@ -28,7 +28,6 @@ export class UsuarioService {
 
   salvaToken(token: string) {
     this.tokenService.salvaToken(token);
-    console.log("xd")
     this.decodificaJWT();
   }
 

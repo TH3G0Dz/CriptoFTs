@@ -4,7 +4,6 @@ import { MensagemService } from 'src/app/componentes/mensagem/mensagem.service';
 import { Router } from '@angular/router';
 import { AdicionarNoticiaModalComponent } from '../noticia/adicionar-noticia-modal/adicionar-noticia-modal.component';
 
-
 @Component({
   selector: 'app-novidades',
   templateUrl: './novidades.component.html',
@@ -13,7 +12,7 @@ import { AdicionarNoticiaModalComponent } from '../noticia/adicionar-noticia-mod
 export class NovidadesComponent  implements OnInit {
 
   constructor(
-    private mensagemService: MensagemService,private router: Router,private dialog: MatDialog
+    private mensagemService: MensagemService,private dialog: MatDialog
   ) {
   }
 

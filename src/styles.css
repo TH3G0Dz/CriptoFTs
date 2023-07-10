@@ -10,3 +10,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: rgb(142, 25, 196);
   color: wheat;
 }
+
+.mat-button {
+  background-color: rgb(12, 37, 175);
+  color: white;
+}

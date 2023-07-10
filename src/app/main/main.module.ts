@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [PrincipalComponent,PerfilComponent],
+  declarations: [PrincipalComponent],
   imports: [CommonModule,RouterModule,MatInputModule],
 })
 export class MainModule {}

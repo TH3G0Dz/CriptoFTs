@@ -1,9 +1,9 @@
 import { Usuario } from './../../../autenticacao/usuario/usuario';
 
 export interface Noticia {
-  Autor?: number;
-  Titulo?: string;
-  Conteudo?: string;
-  DateTime?: Date;
-  Usuario?: Usuario;
+  autor?: number;
+  titulo?: string;
+  conteudo?: string;
+  data?: Date;
+  usuario?: Usuario;
 }

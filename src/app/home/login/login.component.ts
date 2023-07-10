@@ -1,3 +1,4 @@
+import { TokenService } from './../../autenticacao/token.service';
 import { MensagemService } from './../../componentes/mensagem/mensagem.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private authService: AutenticacaoService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private mensagemService: MensagemService
+    private mensagemService: MensagemService,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit(): void {
@@ -42,10 +44,12 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.autenticar(this.loginForm.get('userName')?.value, this.loginForm.get('senha')?.value).subscribe(
-      () => {
+      (response: any) => {
+        var token = response[0].message;
         this.router.navigate(['principal']);
+        this.tokenService.salvaToken(token);
       },
-      (error: any) => {
+      (error) => {
         this.mensagemService.MensagemDeErro('Usuário ou senha inválido');
       }
     );

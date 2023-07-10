@@ -21,9 +21,10 @@ import { CommonModule } from '@angular/common';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { PerfilComponent } from './main/perfil/perfil.component';
 
 @NgModule({
-  declarations: [AppComponent,NovidadesComponent,AssistirComponent,AulasComponent,NoticiaComponent,AdicionarNoticiaModalComponent],
+  declarations: [AppComponent,NovidadesComponent,AssistirComponent,AulasComponent,NoticiaComponent,AdicionarNoticiaModalComponent,PerfilComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
