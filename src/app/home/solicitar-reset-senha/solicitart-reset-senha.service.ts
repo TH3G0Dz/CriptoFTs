@@ -10,6 +10,6 @@ export class SolicitarResetSenhaService {
 
   solicitarResetSenha(email: string) {
     console.log(email)
-    return this.http.post(`${environment.ApiUrl}/solicitarresetsenha`,{Email: email})
+    return this.http.post(`${environment.ApiUrl}/solicitar-reset-senha`,{Email: email})
   }
 }
