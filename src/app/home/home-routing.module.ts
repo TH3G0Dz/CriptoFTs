@@ -4,6 +4,8 @@ import { EmailActiveMessageComponent } from './email-ativate/ative-email.compone
 import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
 import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
+import { SolicitarResetSenhaComponent } from './solicitar-reset-senha/solicitar-reset-senha.component';
+import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
         path: 'ativeemail',
         component: EmailActiveMessageComponent,
       },
+      {
+        path: 'solicitar-reset-senha',
+        component: SolicitarResetSenhaComponent,
+      },
+      {
+        path: 'reset-senha',
+        component: ResetSenhaComponent,
+      }
     ],
   },
 ];

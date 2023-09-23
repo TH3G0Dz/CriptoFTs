@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.salvaToken(token);
       },
       (error) => {
-        this.mensagemService.MensagemDeErro('Usuário ou senha inválido');
+        this.mensagemService.MensagemDeErro(error);
       }
     );
   }

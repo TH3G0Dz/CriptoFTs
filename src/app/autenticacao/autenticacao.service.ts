@@ -15,5 +15,5 @@ export class AutenticacaoService {
   ) {}
 
   autenticar(usuario: string, senha: string) {
-    return this.httpClient.post(`${environment.ApiUrl}/login`,{userName: usuario,password: senha,})
+    return this.httpClient.post(`${environment.ApiUrl}/api/login`,{userName: usuario,password: senha,})
 }}

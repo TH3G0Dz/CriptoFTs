@@ -9,12 +9,14 @@ import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 import { EmailActiveMessageComponent } from './email-ativate/ative-email.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { SolicitarResetSenhaComponent } from './solicitar-reset-senha/solicitar-reset-senha.component';
+import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, LoginComponent, NovoUsuarioComponent, EmailActiveMessageComponent],
+  declarations: [HomeComponent, LoginComponent, NovoUsuarioComponent, EmailActiveMessageComponent,SolicitarResetSenhaComponent,ResetSenhaComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

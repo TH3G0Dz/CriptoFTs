@@ -11,13 +11,15 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
+
+//Captura a cor na biblioteca
 $custom-primary: mat-palette($mat-amber);
 
-// Definir a matiz principal
+// Definir a matriz da cor a uma variavel no caso a cor principal
 $mat-primary: map-get($custom-primary, 500);
 
 // Definir a paleta de cores
-$cryptoft-primary: mat-palette($custom-primary, A700);
+$cryptoft-primary: mat-palette($mat-purple, 700);
 $cryptoft-accent: mat-palette($mat-grey, 800);
 
 // The warn palette is optional (defaults to red).
