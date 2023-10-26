@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SolicitarResetSenhaComponent } from './solicitar-reset-senha/solicitar-reset-senha.component';
 import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
+import { ReCaptchaModule } from '../componentes/recaptcha/recaptcha.module';
 
 
 
@@ -20,6 +21,7 @@ import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    ReCaptchaModule,
     FormsModule,
     MensagemModule,
     ReactiveFormsModule,

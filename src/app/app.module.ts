@@ -17,7 +17,6 @@ import { AulasComponent } from './main/aulas/aulas.component';
 import { NoticiaComponent } from './main/noticia/noticia.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AdicionarNoticiaModalComponent } from './main/noticia/adicionar-noticia-modal/adicionar-noticia-modal.component';
-import { CommonModule } from '@angular/common';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
