@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReCaptchaComponent } from './recaptcha.component';
+import { CaptchaComponent } from './captcha.component';
 
 describe('LoadComponent', () => {
-  let component: ReCaptchaComponent;
-  let fixture: ComponentFixture<ReCaptchaComponent>;
+  let component: CaptchaComponent;
+  let fixture: ComponentFixture<CaptchaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ReCaptchaComponent ]
+      declarations: [ CaptchaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReCaptchaComponent);
+    fixture = TestBed.createComponent(CaptchaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

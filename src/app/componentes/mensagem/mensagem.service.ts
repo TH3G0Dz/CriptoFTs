@@ -18,15 +18,15 @@ export class MensagemService {
       this._snackBar.open(erro, 'Ok!', {
         horizontalPosition: this.horizontalPosition,
         verticalPosition: this.verticalPosition,
-        panelClass: ['mat-toolbar', 'green']
+        panelClass: ['mat-toolbar', 'mat-warn']
       });
   }
 
   MensagemDeSucesso(sucesso: string) {
     this._snackBar.open(sucesso, 'Ok!', {
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: 'top',
-      panelClass: ['mat-toolbar', 'mat-warn']
+      verticalPosition: this.verticalPosition,
+      panelClass: ['mat-toolbar', 'green']
     });
   }
 }

@@ -11,17 +11,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SolicitarResetSenhaComponent } from './solicitar-reset-senha/solicitar-reset-senha.component';
 import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
-import { ReCaptchaModule } from '../componentes/recaptcha/recaptcha.module';
-
-
-
+import { CaptchaModule } from '../componentes/recaptcha/captcha.module';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent, NovoUsuarioComponent, EmailActiveMessageComponent,SolicitarResetSenhaComponent,ResetSenhaComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ReCaptchaModule,
+    CaptchaModule,
     FormsModule,
     MensagemModule,
     ReactiveFormsModule,
