@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
       this.captchaService.captchStatus.subscribe((status)=>{
         this.captchaStatus = status;
          if (status == true) {
-            this.mensagemService.MensagemDeSucesso('Captcha valid.');
             this.loginForm.get('captcha')!.updateValueAndValidity();
         }
       });
