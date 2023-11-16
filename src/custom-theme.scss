@@ -19,7 +19,7 @@ $custom-primary: mat-palette($mat-amber);
 $mat-primary: map-get($custom-primary, 500);
 
 // Definir a paleta de cores
-$cryptoft-primary: mat-palette($mat-purple, 700);
+$cryptoft-primary: mat-palette($mat-grey, 800);
 $cryptoft-accent: mat-palette($mat-grey, 800);
 
 // The warn palette is optional (defaults to red).

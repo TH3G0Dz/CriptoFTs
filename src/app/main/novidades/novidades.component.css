@@ -41,6 +41,28 @@ nav > li {
   }
 }
 
+.noticia-section, .cripto-section{
+	display: flex;
+	overflow-x: auto;
+	margin-top: 20px;
+}
+  
+.noticia-item, .cripto-item{
+	flex: 0 0 auto;
+	width: 300px;
+	height: 200px;
+	border: 1px solid #ccc;
+	margin-right: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 16px;
+  background-color: #FF9800;
+}
+
 button{
   margin: 2rem;
 }

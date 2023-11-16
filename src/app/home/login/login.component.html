@@ -1,6 +1,6 @@
 <form class="form mt-4" (ngSubmit)="login()" [formGroup]="loginForm">
   <mat-form-field class="example-full-width" style="width: 30vw;">
-    <mat-label>Usuário</mat-label>
+    <mat-label class="text">Usuário</mat-label>
     <input matInput formControlName="userName" [errorStateMatcher]="matcher" placeholder="Siclano Beltrano"
       name="usuario">
     <mat-error *ngIf="loginForm.get('userName')?.errors?.required">
@@ -8,7 +8,7 @@
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width" style="width: 30vw;">
-    <mat-label>Senha</mat-label>
+    <mat-label class="text">Senha</mat-label>
     <input type="password" matInput formControlName="senha" placeholder="**********" name="password">
     <mat-error *ngIf="loginForm.get('userName')?.errors?.required">
       Campo <strong>OBRIGATORIO</strong>

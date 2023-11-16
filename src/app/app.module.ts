@@ -22,6 +22,8 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PerfilComponent } from './main/perfil/perfil.component';
+import { PrincipalModule } from './main/principal/principal.module';
+
 
 @NgModule({
   declarations: [AppComponent,NovidadesComponent,AssistirComponent,AulasComponent,NoticiaComponent,AdicionarNoticiaModalComponent,PerfilComponent],
@@ -30,12 +32,13 @@ import { PerfilComponent } from './main/perfil/perfil.component';
     AppRoutingModule,
     HttpClientModule,
     CabecalhoModule,
+    CommonModule,
     RodapeModule,
     FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSnackBarModule,
-    LoadModule,RouterModule,MatDialogModule,ReactiveFormsModule,MatInputModule,MatAutocompleteModule
+    LoadModule,RouterModule,MatDialogModule,ReactiveFormsModule,MatInputModule,MatAutocompleteModule,PrincipalModule
   ],
   exports: [
     MatToolbarModule
