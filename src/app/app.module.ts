@@ -22,6 +22,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PerfilComponent } from './main/perfil/perfil.component';
 import { PrincipalModule } from './main/principal/principal.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
