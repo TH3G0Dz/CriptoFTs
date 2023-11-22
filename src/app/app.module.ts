@@ -21,7 +21,6 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { PerfilComponent } from './main/perfil/perfil.component';
-import { PrincipalModule } from './main/principal/principal.module';
 import { CommonModule } from '@angular/common';
 
 
@@ -38,7 +37,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSnackBarModule,
-    LoadModule,RouterModule,MatDialogModule,ReactiveFormsModule,MatInputModule,MatAutocompleteModule,PrincipalModule
+    LoadModule,RouterModule,MatDialogModule,ReactiveFormsModule,MatInputModule,MatAutocompleteModule
   ],
   exports: [
     MatToolbarModule

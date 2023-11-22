@@ -1,52 +1,46 @@
+// crypto.service.ts
 import { Injectable } from '@angular/core';
-import { Observable, of, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
-
-interface Crypto {
-  name: string;
-  isIncreased: boolean;
-}
-
-interface Video {
-  url: string;
-}
-
-interface News {
-  title: string;
-  description: string;
-  url: string;
-}
+import { BehaviorSubject, Observable, interval, Subject } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CryptoService {
-  getCryptos(): Observable<Crypto[]> {
-    return interval(3000).pipe(
-      map(() => this.generateCryptos())
-    );
+  private cryptoDataSubject: BehaviorSubject<any> = new BehaviorSubject<any>({});
+  public cryptoData$: Observable<any> = this.cryptoDataSubject.asObservable();
+
+  private updateSubject: Subject<void> = new Subject<void>();
+  public updates$: Observable<void> = this.updateSubject.asObservable();
+
+  constructor() {
+    interval(5000)
+      .pipe(take(10))
+      .subscribe(() => {
+        this.fetchCryptoData();
+      });
   }
 
-  getVideos(): Observable<Video[]> {
-    return of([
-      { url: 'https://www.youtube.com/embed/example-video-id1' },
-      { url: 'https://www.youtube.com/embed/example-video-id2' },
-      // Add more videos as needed
-    ]);
+  private fetchCryptoData(): void {
+    const updatedCryptoData = {
+      bitcoinPrice: `$${Math.random() * 100000}`,
+      ethereumPrice: `$${Math.random() * 5000}`,
+      binanceCoinPrice: `$${Math.random() * 1000}`,
+      example1Price: `$${Math.random() * 100}`,
+      example2Price: `$${Math.random() * 50}`,
+      example3Price: `$${Math.random() * 200}`,
+      example4Price: `$${Math.random() * 75}`,
+      example5Price: `$${Math.random() * 120}`,
+      example6Price: `$${Math.random() * 90}`,
+    };
+
+    if (!this.isEqual(updatedCryptoData, this.cryptoDataSubject.value)) {
+      this.cryptoDataSubject.next(updatedCryptoData);
+      this.updateSubject.next();
+    }
   }
 
-  getNews(): Observable<News[]> {
-    return of([
-      { title: 'Crypto News 1', description: 'Description of news 1', url: 'https://example.com/news1' },
-      // Add more news as needed
-    ]);
-  }
-
-  private generateCryptos(): Crypto[] {
-    return [
-      { name: 'Bitcoin', isIncreased: Math.random() < 0.5 },
-      { name: 'Ethereum', isIncreased: Math.random() < 0.5 },
-      // Add more cryptocurrencies as needed
-    ];
+  private isEqual(obj1: any, obj2: any): boolean {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
 }

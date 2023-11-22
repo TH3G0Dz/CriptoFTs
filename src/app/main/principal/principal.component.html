@@ -1,52 +1,28 @@
-<!--<h1>Bem vindo ao CryptoFT</h1>
-
-<div class="container">
-  <div class="planets sun">
-    <div class="one ring"></div>
-
-    <div class="two">
-      <div class="ring"></div>
-      <div class="seven"></div>
-    </div>
-
-    <div class="three">
-      <div class="ring"></div>
-      <div class="four"></div>
-    </div>
-
-    <div class="three slow">
-      <div class="ring"></div>
-      <div class="five"></div>
-    </div>
-    <div class="three fast">
-      <div class="ring"></div>
-      <div class="six"></div>
-    </div>
-  </div>
-</div>-->
-
+<!-- principal.component.html -->
 <div class="crypto-info">
   <div class="column">
     <div class="section-header">Moeda em Destaque</div>
-    <div class="info-item">Bitcoin (BTC) - $60,000</div>
-    <div class="info-item">Exemplo 1</div>
-    <div class="info-item">Exemplo 2</div>
+    <div class="info-item">Bitcoin (BTC) - {{ cryptoInfo.bitcoinPrice }}</div>
+    <div class="info-item">Exemplo 1 - {{ cryptoInfo.example1Price }}</div>
+    <div class="info-item">Exemplo 2 - {{ cryptoInfo.example2Price }}</div>
   </div>
 
   <div class="column">
     <div class="section-header">Moeda com Maior Alta</div>
-    <div class="info-item">Ethereum (ETH) - $2,500</div>
-    <div class="info-item">Exemplo 3</div>
-    <div class="info-item">Exemplo 4</div>
+    <div class="info-item">Ethereum (ETH) - {{ cryptoInfo.ethereumPrice }}</div>
+    <div class="info-item">Exemplo 3 - {{ cryptoInfo.example3Price }}</div>
+    <div class="info-item">Exemplo 4 - {{ cryptoInfo.example4Price }}</div>
   </div>
 
   <div class="column">
     <div class="section-header">Moeda com Maior Volume</div>
-    <div class="info-item">Binance Coin (BNB) - $500</div>
-    <div class="info-item">Exemplo 5</div>
-    <div class="info-item">Exemplo 6</div>
+    <div class="info-item">Binance Coin (BNB) - {{ cryptoInfo.binanceCoinPrice }}</div>
+    <div class="info-item">Exemplo 5 - {{ cryptoInfo.example5Price }}</div>
+    <div class="info-item">Exemplo 6 - {{ cryptoInfo.example6Price }}</div>
   </div>
 </div>
+<!-- ... restante do HTML ... -->
+
 <h1 class="h1">Aulas e Cursos</h1>
 <div class="video-section">
   <div class="video-item">Video 1 (Exemplo)</div>
